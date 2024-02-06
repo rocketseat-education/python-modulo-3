@@ -41,7 +41,7 @@ def test_update_task():
             "title": "Título atualizado"
         }
         response = requests.put(f"{BASE_URL}/tasks/{task_id}", json=payload)
-        response.status_code == 200
+        assert response.status_code == 200
         response_json = response.json()
         assert "message" in response_json
 
